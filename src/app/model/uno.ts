@@ -9,26 +9,26 @@ export interface UnoCard{
 
 export class UnoDeck{
   private static COLOURS: string[] = ["red","green", "blue", "yellow"];
-  private cards: UnoCard[]=[];
-  constructor() {
-    // Create the deck
-    //
-    let prefix: string = "0";
-    for (let i = 0; i < 2; i++) {
-      for (let c = 0; c < UnoDeck.COLOURS.length; c++) {
-        for (let j = 0; j < 12; j++) {
-          prefix = "0"
-          if (j < 10)
-            prefix = prefix + j;
-          else
-            prefix = j + "";
-          this.cards.push({
-            value: j + 1,
-            colour: UnoDeck.COLOURS[c],
-            imageUrl: "/assets/uno_deck/c" + c + "_" + prefix + ".png"
-          })
-        }
-      }
+    private cards: UnoCard[]=[];
+      constructor() {
+        // Create the deck
+        //
+        let prefix: string = "0";
+        for (let i = 0; i < 2; i++) {
+          for (let c = 0; c < UnoDeck.COLOURS.length; c++) {
+            for (let j = 0; j < 12; j++) {
+              prefix = "0"
+              if (j < 10)
+                prefix = prefix + j;
+              else
+                prefix = j + "";
+              this.cards.push({
+                value: j + 1,
+                colour: UnoDeck.COLOURS[c],
+                imageUrl: "/assets/uno_deck/c" + c + "_" + prefix + ".png"
+              })
+            }
+          }
     }
     //this.shuffleCards();
     this.shuffleCards1(this.cards);
@@ -61,4 +61,11 @@ export class UnoDeck{
   public take(): UnoCard{
       return (this.cards.pop());
   }
+
+
+}
+
+export class Player{
+  public cards: UnoCard[]=[];
+  public playerNum: number[] =[];
 }

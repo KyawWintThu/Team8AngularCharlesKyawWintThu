@@ -7,5 +7,21 @@
 </button>
 <br>
 <br>
-<app-header [headercards]="cards"></app-header>
+<button type="button" (click)="draw7()">Start Draw 7</button>
+<!--<table>
+  <td *ngFor="let i of cards">
+    <tr>
+      <img [src]="i.imageUrl" [alt]="i.value" >
+    </tr>
+  </td>
+</table>
+-->
+
+<table>
+  <tr *ngFor="let i of plyr ">
+    <td *ngFor="let j of i.cards">
+      <img [src]="j.imageUrl" [alt]="j.value">
+    </td>
+  </tr>
+</table>
 

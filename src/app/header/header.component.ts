@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {UnoCard, UnoDeck } from "../model/uno";
+import {AppComponent} from "../app.component"
 
 
 @Component({
@@ -17,13 +18,13 @@ export class HeaderComponent implements OnInit {
 
   }
   /*start(){
-    for (let i = 0;i < HeaderComponent.PASSNUM;i++) {
+    for (let i = 0;i < ;i++) {
       console.log(HeaderComponent.PASSNUM);
       this.draw7();
     }
   }*/
-  draw7(){
-    for (let i = 0; i < 7; i++)
-      this.headercards[i] = this.deck.take();
-  }
+
+
+
+
 }
